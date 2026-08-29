@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details - Freelance Design</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Space Grotesk -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Space Grotesk', sans-serif; background-color: #fafcff; }
+
+        /* Animasi Latar (Blobs) */
+        @keyframes blob {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+        .animate-blob { animation: blob 7s infinite; }
+        .animation-delay-2000 { animation-delay: 2s; }
+        .animation-delay-4000 { animation-delay: 4s; }
+
+        /* Animasi Teks */
+        @keyframes gradient-text {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .animate-gradient-text { background-size: 200% auto; animation: gradient-text 3s linear infinite; }
+
+        /* Animasi Float Gambar */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float { animation: float 4s ease-in-out infinite; }
+    </style>
+</head>
+<body class="text-slate-800 antialiased overflow-x-hidden relative min-h-screen">
+
+    <!-- BACKGROUND ANIMATION (Blobs Lucu) -->
+    <div class="fixed inset-0 w-full h-full z-[-1] overflow-hidden pointer-events-none opacity-40">
+        <div class="absolute top-0 -left-4 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-blob"></div>
+        <div class="absolute top-0 -right-4 w-72 h-72 bg-cyan-300 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-blob animation-delay-2000"></div>
+        <div class="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-blob animation-delay-4000"></div>
+    </div>
+
+    <!-- HEADER RESPONSIVE -->
+    <header class="w-full flex justify-between items-center px-5 py-4 md:px-12 md:py-6 border-b border-white/20 sticky top-0 bg-white/70 backdrop-blur-md z-50 shadow-sm">
+        <div class="text-xl md:text-2xl font-black text-slate-900 tracking-tighter cursor-pointer hover:scale-105 transition-transform duration-300">
+            Thvl<span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-indigo-500">.Ryyn</span>
+        </div>
+        <a href="cv1.html#detailprojek" class="group inline-flex items-center gap-1.5 md:gap-2 px-4 py-2 md:px-5 md:py-2.5 bg-white border border-slate-200 text-slate-700 rounded-full font-bold text-xs md:text-sm hover:bg-gradient-to-r hover:from-slate-900 hover:to-slate-700 hover:text-white hover:border-transparent transition-all duration-300 shadow-sm hover:shadow-lg hover:-translate-y-1">
+            <i class="fas fa-arrow-left group-hover:-translate-x-1 transition-transform"></i> 
+            <span class="hidden sm:inline">Back</span><span class="sm:hidden">Back</span>
+        </a>
+    </header>
+
+    <!-- KONTEN UTAMA DETAIL PROYEK -->
+    <main class="w-full px-5 py-8 md:px-12 md:py-12 max-w-5xl mx-auto relative z-10">
+
+        <!-- Label Kategori -->
+        <div class="flex flex-wrap gap-2 mb-4 md:mb-6">
+            <span class="px-3 py-1.5 bg-indigo-100 text-indigo-700 rounded-full text-[10px] md:text-xs font-bold shadow-sm cursor-default">🎨 Graphic Design</span>
+            <span class="px-3 py-1.5 bg-yellow-100 text-red-700 rounded-full text-[10px] md:text-xs font-bold shadow-sm cursor-default">✅ Freelance</span>
+            <span class="px-3 py-1.5 bg-cyan-100 text-cyan-700 rounded-full text-[10px] md:text-xs font-bold shadow-sm cursor-default">👕 Apparel & Poster</span>
+            <span class="px-3 py-1.5 bg-red-100 text-white-700 rounded-full text-[10px] md:text-xs font-bold shadow-sm cursor-default">✨ Canva Interactive</span>
+        </div>
+
+        <!-- Judul Proyek -->
+        <h1 class="text-3xl sm:text-3xl md:text-4xl font-black mb-6 md:mb-10 leading-tight">
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-500 to-cyan-500 animate-gradient-text">Creative Design Works</span>
+        </h1>
+
+        <!-- Gambar Utama (Melayang) -->
+        <div class="w-full aspect-video rounded-3xl overflow-hidden mb-8 shadow-2xl border-[6px] border-white animate-float bg-white group cursor-pointer relative">
+            <img src="img/cover-desain.png" alt="Cover SIAPA" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-in-out">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        </div>
+
+        <!-- Deskripsi Proyek (Glassmorphism) -->
+        <div class="bg-white/60 backdrop-blur-lg p-6 md:p-8 rounded-3xl border border-white shadow-xl space-y-6 md:space-y-8 text-slate-600 leading-relaxed mb-6 hover:shadow-2xl transition-shadow duration-300">
+            <div>
+                <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-2 flex items-center gap-2">
+                    <i class="fas fa-file-alt text-indigo-500"></i> About the Project
+                </h3>
+                <p class="text-sm md:text-base">Creative Design Works is a collection of graphic design projects developed through freelance experience and personal creative projects. The collection showcases various visual works, including logo designs, promotional posters, brochures, apparel and jersey designs, twibbons, banners, and event documentation. Each work was created by translating ideas and project requirements into visual designs that are attractive, communicative, and relevant to their intended purpose.</p>
+            </div>
+        </div>
+
+        <!-- CASE STUDY SECTION -->
+        <div class="space-y-6 md:space-y-8 mb-10">
+            
+            <!-- 01. Context -->
+            <div class="bg-white/60 backdrop-blur-lg p-6 md:p-8 rounded-3xl border border-white shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col md:flex-row gap-4 md:gap-6 group">
+                <div class="w-14 h-14 shrink-0 bg-gradient-to-br from-indigo-500 to-purple-500 text-white rounded-2xl flex items-center justify-center font-black text-xl shadow-md group-hover:scale-110 transition-transform duration-300">
+                    01
+                </div>
+                <div>
+                    <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-3">Design Scope</h3>
+                    <p class="text-sm md:text-base text-slate-600 leading-relaxed mb-3">
+                        The collection covers a variety of visual design needs for digital and print media, including:
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-cyan-500 mt-1"></i>
+                            <p class="text-sm md:text-base text-slate-600 leading-relaxed"><strong>Logo & Brand Identity</strong></p>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-cyan-500 mt-1"></i>
+                            <p class="text-sm md:text-base text-slate-600 leading-relaxed"><strong>Banner & Poster</strong></p>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-cyan-500 mt-1"></i>
+                            <p class="text-sm md:text-base text-slate-600 leading-relaxed"><strong>Brochure & Promotional Materials</strong></p>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-cyan-500 mt-1"></i>
+                            <p class="text-sm md:text-base text-slate-600 leading-relaxed"><strong>Jersey & Apparel Design</strong></p>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-cyan-500 mt-1"></i>
+                            <p class="text-sm md:text-base text-slate-600 leading-relaxed"><strong>Twibbon & Social Media Content</strong></p>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-cyan-500 mt-1"></i>
+                            <p class="text-sm md:text-base text-slate-600 leading-relaxed"><strong>Event & Activity Documentation</strong></p>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-cyan-500 mt-1"></i>
+                            <p class="text-sm md:text-base text-slate-600 leading-relaxed"><strong>Creative Visual Content</strong></p>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 02. Key Challenges -->
+            <div class="bg-white/60 backdrop-blur-lg p-6 md:p-8 rounded-3xl border border-white shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col md:flex-row gap-4 md:gap-6 group">
+                <div class="w-14 h-14 shrink-0 bg-gradient-to-br from-cyan-500 to-blue-500 text-white rounded-2xl flex items-center justify-center font-black text-xl shadow-md group-hover:scale-110 transition-transform duration-300">
+                    02
+                </div>
+                <div>
+                    <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-3">Creative Approach</h3>
+                    <p class="text-sm md:text-base text-slate-600 leading-relaxed mb-3">
+                        The creative approach begins with understanding the purpose, message, and visual direction of each project. The design process then focuses on combining suitable layouts, colors, typography, imagery, and visual elements to create a clear and engaging composition. Each design is adapted to its specific context, whether it is created for promotional purposes, events, communities, organizations, or personal use.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 03. Solution -->
+            <div class="bg-white/60 backdrop-blur-lg p-6 md:p-8 rounded-3xl border border-white shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col md:flex-row gap-4 md:gap-6 group">
+                <div class="w-14 h-14 shrink-0 bg-gradient-to-br from-pink-500 to-orange-400 text-white rounded-2xl flex items-center justify-center font-black text-xl shadow-md group-hover:scale-110 transition-transform duration-300">
+                    03
+                </div>
+                <div>
+                    <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-3">Design Process</h3>
+                    <p class="text-sm md:text-base text-slate-600 leading-relaxed">
+                        The creative process generally follows several stages:
+                    </p>
+                    <br>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-cyan-500 mt-1"></i>
+                            <p class="text-sm md:text-base text-slate-600 leading-relaxed"><strong>Brief & Concept → Reference & Exploration → Layout & Design → Revision → Final Output</strong></p>
+                        </li>
+                    </ul>
+                    <br>
+                    <p class="text-sm md:text-base text-slate-600 leading-relaxed">
+                        The process may vary depending on the project requirements, design format, and intended use of the final work.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 04. Kesimpulan -->
+            <div class="bg-white/60 backdrop-blur-lg p-6 md:p-8 rounded-3xl border border-white shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col md:flex-row gap-4 md:gap-6 group">
+                <div class="w-14 h-14 shrink-0 bg-gradient-to-br from-green-500 to-yellow-500 text-white rounded-2xl flex items-center justify-center font-black text-xl shadow-md group-hover:scale-110 transition-transform duration-300">
+                    04
+                </div>
+                <div>
+                    <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-3">Creative Works</h3>
+                    <p class="text-sm md:text-base text-slate-600 leading-relaxed mb-3">
+                        This collection presents a variety of completed designs, ranging from branding and promotional materials to apparel designs, social media content, and event-related visuals. These works reflect my experience in exploring creative ideas, developing visual concepts, and transforming project requirements into practical and engaging designs.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 05. final -->
+            <div class="bg-white/60 backdrop-blur-lg p-6 md:p-8 rounded-3xl border border-white shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col md:flex-row gap-4 md:gap-6 group">
+                <div class="w-14 h-14 shrink-0 bg-gradient-to-br from-indigo-500 to-red-500 text-white rounded-2xl flex items-center justify-center font-black text-xl shadow-md group-hover:scale-110 transition-transform duration-300">
+                    05
+                </div>
+                <div>
+                    <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-3">Final Outcome</h3>
+                    <p class="text-sm md:text-base text-slate-600 leading-relaxed mb-3">
+                        The result is a diverse collection of creative works that represents my experience in handling different design styles, formats, and visual requirements through freelance and personal projects.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TOMBOL TRIGGER PREVIEW -->
+        <div class="flex justify-center sm:justify-start pb-8">
+            <button onclick="showPreview()" class="group inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-indigo-600 to-cyan-500 text-white rounded-full font-bold text-sm hover:from-indigo-500 hover:to-cyan-400 transition-all shadow-lg hover:shadow-cyan-500/50 hover:-translate-y-1 active:translate-y-0">
+                View Project Now
+                <i class="fas fa-chevron-down group-hover:translate-y-1 transition-transform"></i>
+            </button>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- SECTION INTERACTIVE PREVIEW -->
+        <!-- ========================================== -->
+        <div id="interactive-section" class="hidden opacity-0 transition-opacity duration-1000 mt-10 border-t border-slate-200/50 pt-10">
+            
+            <div class="mb-6">
+                <h3 class="text-2xl md:text-3xl font-black text-slate-900 flex items-center gap-2">
+                    <i class="fas fa-laptop-code text-indigo-600"></i> Live Interactive Preview
+                </h3>
+                <p class="text-slate-600 text-sm mt-1">Try exploring the Canva design preview directly below:</p>
+            </div>
+
+            <!-- 1. Tampilan Mockup Browser (iFrame Embed Canva) -->
+            <div class="w-full bg-slate-900 rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border border-slate-800 mb-12 group">
+                <!-- Bar Atas Browser -->
+                <div class="bg-slate-800/90 px-4 py-3 flex items-center justify-between border-b border-slate-700/50">
+                    <div class="flex items-center gap-2">
+                        <span class="w-3 h-3 rounded-full bg-red-500"></span>
+                        <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
+                        <span class="w-3 h-3 rounded-full bg-green-500"></span>
+                    </div>
+                    <div class="text-xs text-slate-400 font-mono bg-slate-900/60 px-4 py-1 rounded-full border border-slate-700/50">
+                        Interactive Live Preview
+                    </div>
+                    <div class="w-12"></div>
+                </div>
+
+                <!-- Kontainer iFrame Canva -->
+                <div class="relative w-full h-[450px] md:h-[650px] bg-slate-950 overflow-hidden">
+                <iframe 
+                    loading="lazy" 
+                    class="w-full h-full border-0" 
+                    src="https://www.canva.com/design/DAHTSsZ58vQ/qgM8GqDoDrNPEhmdqkAj5Q/view?embed" 
+                    allowfullscreen="allowfullscreen" 
+                    allow="fullscreen">
+                </iframe>
+                <div class="p-3 bg-slate-800 text-center border-t border-slate-700">
+                    <a href="https://www.canva.com/design/DAGpF7tkrjM/view" target="_blank" rel="noopener noreferrer" class="text-xs text-cyan-400 hover:underline inline-flex items-center gap-1.5">
+                        <i class="fas fa-external-link-alt"></i> Can't load the preview? Open it directly in Canva
+                    </a>
+                </div>
+                </div>
+            </div>
+
+            <!-- 2. Galeri Hasil Desain -->
+            <div class="mb-6 mt-12">
+                <h3 class="text-2xl md:text-3xl font-black text-slate-900 flex items-center gap-2">
+                    <i class="fas fa-paint-brush text-cyan-600"></i> Design Gallery
+                </h3>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Desain 1 -->
+                <div class="bg-white/60 backdrop-blur-lg p-4 rounded-3xl border border-white shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="flex items-center gap-2 mb-3 px-1">
+                        <span class="w-2.5 h-2.5 rounded-full bg-indigo-500"></span>
+                        <h4 class="font-bold text-slate-800 text-xs md:text-sm tracking-tight flex-1 truncate">Logo's</h4>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden border-2 border-white cursor-pointer group relative" onclick="openModal(this.querySelector('img').src)">
+                        <img src="img/one.png" alt="one" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="pointer-events-none absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="px-3 py-1.5 bg-white/90 text-slate-900 rounded-full text-xs font-bold shadow-md"><i class="fas fa-search-plus mr-1"></i> Zoom</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desain 2 -->
+                <div class="bg-white/60 backdrop-blur-lg p-4 rounded-3xl border border-white shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="flex items-center gap-2 mb-3 px-1">
+                        <span class="w-2.5 h-2.5 rounded-full bg-cyan-500"></span>
+                        <h4 class="font-bold text-slate-800 text-xs md:text-sm tracking-tight flex-1 truncate">Banner's</h4>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden border-2 border-white cursor-pointer group relative" onclick="openModal(this.querySelector('img').src)">
+                        <img src="img/two.png" alt="two" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="pointer-events-none absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="px-3 py-1.5 bg-white/90 text-slate-900 rounded-full text-xs font-bold shadow-md"><i class="fas fa-search-plus mr-1"></i> Zoom</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desain 3 -->
+                <div class="bg-white/60 backdrop-blur-lg p-4 rounded-3xl border border-white shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="flex items-center gap-2 mb-3 px-1">
+                        <span class="w-2.5 h-2.5 rounded-full bg-pink-500"></span>
+                        <h4 class="font-bold text-slate-800 text-xs md:text-sm tracking-tight flex-1 truncate">Poster's</h4>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden border-2 border-white cursor-pointer group relative" onclick="openModal(this.querySelector('img').src)">
+                        <img src="img/three.png" alt="three" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="pointer-events-none absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="px-3 py-1.5 bg-white/90 text-slate-900 rounded-full text-xs font-bold shadow-md"><i class="fas fa-search-plus mr-1"></i> Zoom</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Desain 4 -->
+                <div class="bg-white/60 backdrop-blur-lg p-4 rounded-3xl border border-white shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="flex items-center gap-2 mb-3 px-1">
+                        <span class="w-2.5 h-2.5 rounded-full bg-pink-500"></span>
+                        <h4 class="font-bold text-slate-800 text-xs md:text-sm tracking-tight flex-1 truncate">T-shirt & Jersey</h4>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden border-2 border-white cursor-pointer group relative" onclick="openModal(this.querySelector('img').src)">
+                        <img src="img/four.png  " alt="four" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="pointer-events-none absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="px-3 py-1.5 bg-white/90 text-slate-900 rounded-full text-xs font-bold shadow-md"><i class="fas fa-search-plus mr-1"></i> Zoom</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desain 5 -->
+                <div class="bg-white/60 backdrop-blur-lg p-4 rounded-3xl border border-white shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="flex items-center gap-2 mb-3 px-1">
+                        <span class="w-2.5 h-2.5 rounded-full bg-pink-500"></span>
+                        <h4 class="font-bold text-slate-800 text-xs md:text-sm tracking-tight flex-1 truncate">Brosur & Frame</h4>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden border-2 border-white cursor-pointer group relative" onclick="openModal(this.querySelector('img').src)">
+                        <img src="img/five.png" alt="five" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="pointer-events-none absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="px-3 py-1.5 bg-white/90 text-slate-900 rounded-full text-xs font-bold shadow-md"><i class="fas fa-search-plus mr-1"></i> Zoom</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desain 6 -->
+                <div class="bg-white/60 backdrop-blur-lg p-4 rounded-3xl border border-white shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="flex items-center gap-2 mb-3 px-1">
+                        <span class="w-2.5 h-2.5 rounded-full bg-pink-500"></span>
+                        <h4 class="font-bold text-slate-800 text-xs md:text-sm tracking-tight flex-1 truncate">Twibbon's</h4>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden border-2 border-white cursor-pointer group relative" onclick="openModal(this.querySelector('img').src)">
+                        <img src="img/six.png" alt="six" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="pointer-events-none absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="px-3 py-1.5 bg-white/90 text-slate-900 rounded-full text-xs font-bold shadow-md"><i class="fas fa-search-plus mr-1"></i> Zoom</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desain 7 -->
+                <div class="bg-white/60 backdrop-blur-lg p-4 rounded-3xl border border-white shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="flex items-center gap-2 mb-3 px-1">
+                        <span class="w-2.5 h-2.5 rounded-full bg-pink-500"></span>
+                        <h4 class="font-bold text-slate-800 text-xs md:text-sm tracking-tight flex-1 truncate">Sticker's</h4>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden border-2 border-white cursor-pointer group relative" onclick="openModal(this.querySelector('img').src)">
+                        <img src="img/seven.png" alt="seven" class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="pointer-events-none absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="px-3 py-1.5 bg-white/90 text-slate-900 rounded-full text-xs font-bold shadow-md"><i class="fas fa-search-plus mr-1"></i> Zoom</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- MODAL POPUP GAMBAR -->
+    <div id="imageModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-slate-900/90 backdrop-blur-sm opacity-0 transition-opacity duration-300" onclick="closeModal()">
+        <button onclick="closeModal()" class="absolute top-5 right-5 text-white text-4xl hover:text-cyan-400 transition-colors">&times;</button>
+        <img id="modalImg" src="" alt="Zoom" class="max-w-[90%] max-h-[90vh] rounded-xl shadow-2xl border-4 border-white/20 scale-95 transition-transform duration-300" onclick="event.stopPropagation()">
+    </div>
+
+    <!-- JAVASCRIPT UNTUK INTERAKSI -->
+    <script>
+        function showPreview() {
+            const section = document.getElementById('interactive-section');
+            
+            section.classList.remove('hidden');
+            setTimeout(() => {
+                section.classList.remove('opacity-0');
+            }, 50);
+
+            setTimeout(() => {
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+        }
+
+        function openModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImg');
+            
+            modalImg.src = imageSrc;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modalImg.classList.remove('scale-95');
+                modalImg.classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImg');
+            
+            modal.classList.add('opacity-0');
+            modalImg.classList.remove('scale-100');
+            modalImg.classList.add('scale-95');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }, 300);
+        }
+    </script>
+
+</body>
+</html>
